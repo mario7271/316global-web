@@ -87,16 +87,37 @@
             opacity: 1;
         }
 
+        .lang-toggle {
+            background: none;
+            border: 1px solid rgba(255,255,255,0.5);
+            color: white;
+            padding: 0.35rem 0.75rem;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 0.8rem;
+            margin-left: 1.5rem;
+            opacity: 0.9;
+            transition: opacity 0.3s, background 0.3s;
+        }
+
+        .lang-toggle:hover {
+            opacity: 1;
+            background: rgba(255,255,255,0.1);
+        }
+
+        .lang-toggle .active {
+            font-weight: 600;
+        }
+
         /* Hero Section */
         .hero {
-            background: linear-gradient(135deg, var(--navy) 0%, var(--deep-blue) 100%);
-            color: white;
-            padding: 10rem 2rem 6rem;
+            background: linear-gradient(rgba(255,255,255,0.85), rgba(255,255,255,0.7)), url('hero-bg.jpeg');
+            background-size: cover;
+            background-position: center;
+            padding: 120px 20px;
             text-align: center;
-            min-height: 80vh;
             display: flex;
             flex-direction: column;
-            justify-content: center;
             align-items: center;
         }
 
@@ -117,10 +138,13 @@
             margin-bottom: 2rem;
             font-weight: 300;
             letter-spacing: 0.2em;
+            text-align: center;
         }
 
         .hero p {
             max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
             font-size: 1.1rem;
             opacity: 0.9;
             margin-bottom: 2rem;
@@ -403,7 +427,7 @@
                 font-size: 1rem;
             }
 
-            nav {
+            nav a {
                 display: none;
             }
 
@@ -423,8 +447,9 @@
         <div class="header-content">
             <div class="logo">316 <span>Global</span></div>
             <nav>
-                <a href="#about">About</a>
-                <a href="#vote">Vote for Logo</a>
+                <a href="#about" data-i18n data-en="About" data-es="Nosotros">About</a>
+                <a href="#vote" data-i18n data-en="Vote for Logo" data-es="Vota por el Logo">Vote for Logo</a>
+                <button type="button" class="lang-toggle" id="langToggle" title="Toggle language" aria-label="Toggle language">ES | EN</button>
             </nav>
         </div>
     </header>
@@ -432,37 +457,37 @@
     <!-- Hero Section -->
     <section class="hero">
         <h1>316 <span>Global</span></h1>
-        <p class="tagline">FAITH • EDUCATION • SERVICE</p>
-        <p>A nonprofit organization dedicated to spreading hope through discipleship, education, and humanitarian aid around the world.</p>
-        <div class="coming-soon-badge">COMING SOON</div>
+        <p class="tagline" data-i18n data-en="FAITH • EDUCATION • SERVICE" data-es="FE • EDUCACIÓN • SERVICIO">FAITH • EDUCATION • SERVICE</p>
+        <p data-i18n data-en="A nonprofit organization dedicated to spreading hope through discipleship, education, and humanitarian aid around the world." data-es="Una organización sin fines de lucro dedicada a difundir esperanza a través del discipulado, la educación y la ayuda humanitaria alrededor del mundo.">A nonprofit organization dedicated to spreading hope through discipleship, education, and humanitarian aid around the world.</p>
+        <div class="coming-soon-badge" data-i18n data-en="COMING SOON" data-es="PRÓXIMAMENTE">COMING SOON</div>
     </section>
 
     <!-- About Section -->
     <section class="about" id="about">
         <div class="about-content">
-            <h2>Our Mission</h2>
-            <p>Inspired by John 3:16, we believe in the transformative power of love, education, and service. 316 Global is being formed to make a lasting impact through multiple programs.</p>
+            <h2 data-i18n data-en="Our Mission" data-es="Nuestra Misión">Our Mission</h2>
+            <p data-i18n data-en="Inspired by John 3:16, we believe in the transformative power of love, education, and service. 316 Global is being formed to make a lasting impact through multiple programs." data-es="Inspirados en Juan 3:16, creemos en el poder transformador del amor, la educación y el servicio. 316 Global se está formando para hacer un impacto duradero a través de múltiples programas.">Inspired by John 3:16, we believe in the transformative power of love, education, and service. 316 Global is being formed to make a lasting impact through multiple programs.</p>
 
             <div class="programs">
                 <div class="program-card">
                     <div class="program-icon">📱</div>
-                    <h3>Digital Discipleship</h3>
-                    <p>Technology platforms for spiritual growth and biblical education</p>
+                    <h3 data-i18n data-en="Digital Discipleship" data-es="Discipulado Digital">Digital Discipleship</h3>
+                    <p data-i18n data-en="Technology platforms for spiritual growth and biblical education" data-es="Plataformas tecnológicas para el crecimiento espiritual y la educación bíblica">Technology platforms for spiritual growth and biblical education</p>
                 </div>
                 <div class="program-card">
                     <div class="program-icon">✈️</div>
-                    <h3>Mission Trips</h3>
-                    <p>Short-term missions to underserved communities worldwide</p>
+                    <h3 data-i18n data-en="Mission Trips" data-es="Viajes Misioneros">Mission Trips</h3>
+                    <p data-i18n data-en="Short-term missions to underserved communities worldwide" data-es="Misiones a corto plazo a comunidades desatendidas en todo el mundo">Short-term missions to underserved communities worldwide</p>
                 </div>
                 <div class="program-card">
                     <div class="program-icon">🏥</div>
-                    <h3>Humanitarian Aid</h3>
-                    <p>Medical assistance, construction, and community support</p>
+                    <h3 data-i18n data-en="Humanitarian Aid" data-es="Ayuda Humanitaria">Humanitarian Aid</h3>
+                    <p data-i18n data-en="Medical assistance, construction, and community support" data-es="Asistencia médica, construcción y apoyo comunitario">Medical assistance, construction, and community support</p>
                 </div>
                 <div class="program-card">
                     <div class="program-icon">🎓</div>
-                    <h3>Scholarships</h3>
-                    <p>Educational support for students in developing countries</p>
+                    <h3 data-i18n data-en="Scholarships" data-es="Becas">Scholarships</h3>
+                    <p data-i18n data-en="Educational support for students in developing countries" data-es="Apoyo educativo para estudiantes en países en desarrollo">Educational support for students in developing countries</p>
                 </div>
             </div>
         </div>
@@ -471,20 +496,20 @@
     <!-- Logo Vote Section -->
     <section class="logo-vote" id="vote">
         <div class="logo-vote-content">
-            <h2>Help Us Choose Our Logo</h2>
-            <p>We're finalizing our brand identity and would love your input! Click on your favorite logo design(s) to vote.</p>
+            <h2 data-i18n data-en="Help Us Choose Our Logo" data-es="Ayúdanos a Elegir Nuestro Logo">Help Us Choose Our Logo</h2>
+            <p data-i18n data-en="We're finalizing our brand identity and would love your input! Click on your favorite logo design(s) to vote." data-es="¡Estamos finalizando nuestra identidad de marca y nos encantaría tu opinión! Haz clic en tu(s) diseño(s) de logo favorito(s) para votar.">We're finalizing our brand identity and would love your input! Click on your favorite logo design(s) to vote.</p>
 
             <div class="logo-grid" id="logoGrid">
                 <!-- Logos will be inserted here by JavaScript -->
             </div>
 
             <div class="submit-section">
-                <h3>Submit Your Vote</h3>
-                <p style="font-size: 0.9rem; color: var(--dark-gray); margin-bottom: 1rem;">Select your favorite logo(s) above, then submit your vote.</p>
-                <input type="text" id="voterName" placeholder="Your Name" required>
-                <input type="email" id="voterEmail" placeholder="Your Email (optional)">
-                <textarea id="voterComments" placeholder="Any comments or suggestions? (optional)"></textarea>
-                <button class="submit-btn" id="submitVote" onclick="submitVote()">Submit Vote</button>
+                <h3 data-i18n data-en="Submit Your Vote" data-es="Envía tu Voto">Submit Your Vote</h3>
+                <p class="submit-instruction" style="font-size: 0.9rem; color: var(--dark-gray); margin-bottom: 1rem;" data-i18n data-en="Select your favorite logo(s) above, then submit your vote." data-es="Selecciona tu(s) logo(s) favorito(s) arriba, luego envía tu voto.">Select your favorite logo(s) above, then submit your vote.</p>
+                <input type="text" id="voterName" data-placeholder-en="Your Name" data-placeholder-es="Tu Nombre" placeholder="Your Name" required>
+                <input type="email" id="voterEmail" data-placeholder-en="Your Email (optional)" data-placeholder-es="Tu Correo (opcional)" placeholder="Your Email (optional)">
+                <textarea id="voterComments" data-placeholder-en="Any comments or suggestions? (optional)" data-placeholder-es="¿Algún comentario o sugerencia? (opcional)" placeholder="Any comments or suggestions? (optional)"></textarea>
+                <button class="submit-btn" id="submitVote" onclick="submitVote()" data-i18n data-en="Submit Vote" data-es="Enviar Voto">Submit Vote</button>
             </div>
         </div>
     </section>
@@ -500,6 +525,37 @@
     <div class="toast" id="toast"></div>
 
     <script>
+        // i18n - Default: English
+        const LANG_KEY = '316global_lang';
+        let currentLang = localStorage.getItem(LANG_KEY) || 'en';
+
+        const translations = {
+            select: { en: 'Select', es: 'Seleccionar' },
+            selected: { en: '✓ Selected', es: '✓ Seleccionado' },
+            pleaseName: { en: 'Please enter your name', es: 'Por favor ingresa tu nombre' },
+            pleaseLogo: { en: 'Please select at least one logo', es: 'Por favor selecciona al menos un logo' },
+            thankVote: { en: 'Thank you for your vote!', es: '¡Gracias por tu voto!' }
+        };
+
+        function setLanguage(lang) {
+            currentLang = lang;
+            localStorage.setItem(LANG_KEY, lang);
+            applyTranslations();
+            renderLogos(); // Re-render to update button text
+        }
+
+        function applyTranslations() {
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const text = el.getAttribute(`data-${currentLang}`) || el.getAttribute('data-en');
+                if (text) el.textContent = text;
+            });
+            document.querySelectorAll('[data-placeholder-en]').forEach(el => {
+                const ph = el.getAttribute(`data-placeholder-${currentLang}`) || el.getAttribute('data-placeholder-en');
+                if (ph) el.placeholder = ph;
+            });
+            document.documentElement.lang = currentLang === 'es' ? 'es' : 'en';
+        }
+
         // Logo data
         const logos = [
             { id: 1, file: '316Global.jpeg', name: 'Logo 1' },
@@ -530,7 +586,7 @@
                     <div class="logo-card-footer">
                         <span class="logo-number">${logo.name}</span>
                         <button class="vote-btn" id="btn-${logo.id}">
-                            ${selectedLogos.has(logo.id) ? '✓ Selected' : 'Select'}
+                            ${selectedLogos.has(logo.id) ? translations.selected[currentLang] : translations.select[currentLang]}
                         </button>
                     </div>
                 </div>
@@ -545,12 +601,12 @@
             if (selectedLogos.has(id)) {
                 selectedLogos.delete(id);
                 card.classList.remove('selected');
-                btn.textContent = 'Select';
+                btn.textContent = translations.select[currentLang];
                 btn.classList.remove('voted');
             } else {
                 selectedLogos.add(id);
                 card.classList.add('selected');
-                btn.textContent = '✓ Selected';
+                btn.textContent = translations.selected[currentLang];
                 btn.classList.add('voted');
             }
 
@@ -579,12 +635,12 @@
             const comments = document.getElementById('voterComments').value.trim();
 
             if (!name) {
-                showToast('Please enter your name');
+                showToast(translations.pleaseName[currentLang]);
                 return;
             }
 
             if (selectedLogos.size === 0) {
-                showToast('Please select at least one logo');
+                showToast(translations.pleaseLogo[currentLang]);
                 return;
             }
 
@@ -621,7 +677,7 @@ Timestamp: ${voteData.timestamp}
             // Send email
             window.location.href = `mailto:malmer@juan316.com?subject=${subject}&body=${body}`;
 
-            showToast('Thank you for your vote!');
+            showToast(translations.thankVote[currentLang]);
 
             // Reset form
             setTimeout(() => {
@@ -635,7 +691,14 @@ Timestamp: ${voteData.timestamp}
 
         // Initialize
         document.addEventListener('DOMContentLoaded', () => {
+            applyTranslations();
             renderLogos();
+
+            // Language toggle
+            document.getElementById('langToggle').addEventListener('click', () => {
+                currentLang = currentLang === 'en' ? 'es' : 'en';
+                setLanguage(currentLang);
+            });
 
             // Add input listener for name field
             document.getElementById('voterName').addEventListener('input', updateSubmitButton);
