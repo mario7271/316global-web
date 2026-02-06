@@ -1,0 +1,11 @@
+{
+  "name": "316global-web",
+  "version": "1.0.0",
+  "description": "316 Global - Nonprofit Organization Website",
+  "scripts": {
+    "dev": "npx serve .",
+    "start": "npx serve ."
+  },
+  "author": "316 Global",
+  "license": "MIT"
+}

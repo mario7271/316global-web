@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>316 Global - Coming Soon</title>
+    <meta name="description" content="316 Global - Faith, Education, Service. A nonprofit organization dedicated to discipleship, missions, and humanitarian aid.">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="316 Global">
+    <meta property="og:description" content="Faith • Education • Service">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://316global.org">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --navy: #0d2137;
+            --deep-blue: #1a365d;
+            --royal-blue: #2563eb;
+            --sky-blue: #3b82f6;
+            --light-blue: #93c5fd;
+            --gold: #d97706;
+            --amber: #f59e0b;
+            --white: #ffffff;
+            --off-white: #f8fafc;
+            --light-gray: #e2e8f0;
+            --dark-gray: #334155;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--dark-gray);
+            line-height: 1.6;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, var(--navy) 0%, var(--deep-blue) 100%);
+            color: white;
+            padding: 1rem 2rem;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+
+        .logo span {
+            color: var(--gold);
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 2rem;
+            font-size: 0.9rem;
+            opacity: 0.9;
+            transition: opacity 0.3s;
+        }
+
+        nav a:hover {
+            opacity: 1;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--navy) 0%, var(--deep-blue) 100%);
+            color: white;
+            padding: 10rem 2rem 6rem;
+            text-align: center;
+            min-height: 80vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 4rem;
+            margin-bottom: 0.5rem;
+            letter-spacing: -0.02em;
+        }
+
+        .hero h1 span {
+            color: var(--gold);
+        }
+
+        .hero .tagline {
+            font-size: 1.25rem;
+            color: var(--light-blue);
+            margin-bottom: 2rem;
+            font-weight: 300;
+            letter-spacing: 0.2em;
+        }
+
+        .hero p {
+            max-width: 600px;
+            font-size: 1.1rem;
+            opacity: 0.9;
+            margin-bottom: 2rem;
+        }
+
+        .coming-soon-badge {
+            display: inline-block;
+            background: var(--gold);
+            color: var(--navy);
+            padding: 0.5rem 1.5rem;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.85rem;
+            letter-spacing: 0.05em;
+        }
+
+        /* About Section */
+        .about {
+            padding: 5rem 2rem;
+            background: var(--off-white);
+        }
+
+        .about-content {
+            max-width: 1000px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .about h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            color: var(--navy);
+            margin-bottom: 1.5rem;
+        }
+
+        .about p {
+            font-size: 1.1rem;
+            color: var(--dark-gray);
+            max-width: 700px;
+            margin: 0 auto 2rem;
+        }
+
+        .programs {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .program-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .program-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+        }
+
+        .program-card h3 {
+            color: var(--deep-blue);
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .program-card p {
+            font-size: 0.9rem;
+            color: var(--dark-gray);
+            margin: 0;
+        }
+
+        .program-icon {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        /* Logo Vote Section */
+        .logo-vote {
+            padding: 5rem 2rem;
+            background: white;
+        }
+
+        .logo-vote-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .logo-vote h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            color: var(--navy);
+            margin-bottom: 1rem;
+        }
+
+        .logo-vote > .logo-vote-content > p {
+            font-size: 1.1rem;
+            color: var(--dark-gray);
+            margin-bottom: 3rem;
+        }
+
+        .logo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .logo-card {
+            background: var(--off-white);
+            border-radius: 12px;
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .logo-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .logo-card.selected {
+            border: 3px solid var(--gold);
+            box-shadow: 0 0 0 3px rgba(217, 119, 6, 0.2);
+        }
+
+        .logo-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: contain;
+            background: white;
+            padding: 1rem;
+        }
+
+        .logo-card-footer {
+            padding: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: white;
+        }
+
+        .logo-number {
+            font-weight: 600;
+            color: var(--deep-blue);
+        }
+
+        .vote-btn {
+            background: var(--royal-blue);
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 0.85rem;
+            font-weight: 500;
+            transition: background 0.3s;
+        }
+
+        .vote-btn:hover {
+            background: var(--deep-blue);
+        }
+
+        .vote-btn.voted {
+            background: var(--gold);
+        }
+
+        .vote-count {
+            font-size: 0.8rem;
+            color: var(--dark-gray);
+        }
+
+        /* Submit Vote Section */
+        .submit-section {
+            margin-top: 3rem;
+            padding: 2rem;
+            background: var(--off-white);
+            border-radius: 12px;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .submit-section h3 {
+            color: var(--deep-blue);
+            margin-bottom: 1rem;
+        }
+
+        .submit-section input {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            border: 1px solid var(--light-gray);
+            border-radius: 8px;
+            font-size: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .submit-section textarea {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            border: 1px solid var(--light-gray);
+            border-radius: 8px;
+            font-size: 1rem;
+            margin-bottom: 1rem;
+            min-height: 100px;
+            resize: vertical;
+        }
+
+        .submit-btn {
+            background: var(--gold);
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: 600;
+            width: 100%;
+            transition: background 0.3s;
+        }
+
+        .submit-btn:hover {
+            background: var(--amber);
+        }
+
+        .submit-btn:disabled {
+            background: var(--light-gray);
+            cursor: not-allowed;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--navy);
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        footer p {
+            opacity: 0.7;
+            font-size: 0.9rem;
+        }
+
+        footer .verse {
+            font-style: italic;
+            margin-bottom: 1rem;
+            opacity: 0.9;
+        }
+
+        /* Toast notification */
+        .toast {
+            position: fixed;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%) translateY(100px);
+            background: var(--deep-blue);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+            transition: transform 0.3s ease;
+            z-index: 1001;
+        }
+
+        .toast.show {
+            transform: translateX(-50%) translateY(0);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero .tagline {
+                font-size: 1rem;
+            }
+
+            nav {
+                display: none;
+            }
+
+            .programs {
+                grid-template-columns: 1fr;
+            }
+
+            .logo-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-content">
+            <div class="logo">316 <span>Global</span></div>
+            <nav>
+                <a href="#about">About</a>
+                <a href="#vote">Vote for Logo</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>316 <span>Global</span></h1>
+        <p class="tagline">FAITH • EDUCATION • SERVICE</p>
+        <p>A nonprofit organization dedicated to spreading hope through discipleship, education, and humanitarian aid around the world.</p>
+        <div class="coming-soon-badge">COMING SOON</div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="about-content">
+            <h2>Our Mission</h2>
+            <p>Inspired by John 3:16, we believe in the transformative power of love, education, and service. 316 Global is being formed to make a lasting impact through multiple programs.</p>
+
+            <div class="programs">
+                <div class="program-card">
+                    <div class="program-icon">📱</div>
+                    <h3>Digital Discipleship</h3>
+                    <p>Technology platforms for spiritual growth and biblical education</p>
+                </div>
+                <div class="program-card">
+                    <div class="program-icon">✈️</div>
+                    <h3>Mission Trips</h3>
+                    <p>Short-term missions to underserved communities worldwide</p>
+                </div>
+                <div class="program-card">
+                    <div class="program-icon">🏥</div>
+                    <h3>Humanitarian Aid</h3>
+                    <p>Medical assistance, construction, and community support</p>
+                </div>
+                <div class="program-card">
+                    <div class="program-icon">🎓</div>
+                    <h3>Scholarships</h3>
+                    <p>Educational support for students in developing countries</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Logo Vote Section -->
+    <section class="logo-vote" id="vote">
+        <div class="logo-vote-content">
+            <h2>Help Us Choose Our Logo</h2>
+            <p>We're finalizing our brand identity and would love your input! Click on your favorite logo design(s) to vote.</p>
+
+            <div class="logo-grid" id="logoGrid">
+                <!-- Logos will be inserted here by JavaScript -->
+            </div>
+
+            <div class="submit-section">
+                <h3>Submit Your Vote</h3>
+                <p style="font-size: 0.9rem; color: var(--dark-gray); margin-bottom: 1rem;">Select your favorite logo(s) above, then submit your vote.</p>
+                <input type="text" id="voterName" placeholder="Your Name" required>
+                <input type="email" id="voterEmail" placeholder="Your Email (optional)">
+                <textarea id="voterComments" placeholder="Any comments or suggestions? (optional)"></textarea>
+                <button class="submit-btn" id="submitVote" onclick="submitVote()">Submit Vote</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p class="verse">"For God so loved the world that he gave his one and only Son, that whoever believes in him shall not perish but have eternal life." — John 3:16</p>
+        <p>316 Global • Nonprofit Organization • Tennessee</p>
+        <p style="margin-top: 1rem; font-size: 0.8rem;">© 2026 316 Global. All rights reserved.</p>
+    </footer>
+
+    <!-- Toast -->
+    <div class="toast" id="toast"></div>
+
+    <script>
+        // Logo data
+        const logos = [
+            { id: 1, file: '316Global.jpeg', name: 'Logo 1' },
+            { id: 2, file: '316Global_1.jpeg', name: 'Logo 2' },
+            { id: 3, file: '316Global_2.jpeg', name: 'Logo 3' },
+            { id: 4, file: '316Global_3.jpeg', name: 'Logo 4' },
+            { id: 5, file: '316Global_4.jpeg', name: 'Logo 5' },
+            { id: 6, file: '316Global_5.jpeg', name: 'Logo 6' },
+            { id: 7, file: '316Global_6.jpeg', name: 'Logo 7' },
+            { id: 8, file: '316Global_7.jpeg', name: 'Logo 8' },
+            { id: 9, file: '316Global_8.jpeg', name: 'Logo 9' },
+            { id: 10, file: '316Global_9.jpeg', name: 'Logo 10' },
+            { id: 11, file: '316Global_10.jpeg', name: 'Logo 11' },
+            { id: 12, file: '316Global_11.jpeg', name: 'Logo 12' },
+            { id: 13, file: '316Global_12.jpeg', name: 'Logo 13' },
+            { id: 14, file: '316Global_13.jpeg', name: 'Logo 14' },
+            { id: 15, file: '316Global_14.jpeg', name: 'Logo 15' },
+        ];
+
+        let selectedLogos = new Set();
+
+        // Render logos
+        function renderLogos() {
+            const grid = document.getElementById('logoGrid');
+            grid.innerHTML = logos.map(logo => `
+                <div class="logo-card" id="card-${logo.id}" onclick="toggleLogo(${logo.id})">
+                    <img src="logos/${logo.file}" alt="${logo.name}" loading="lazy">
+                    <div class="logo-card-footer">
+                        <span class="logo-number">${logo.name}</span>
+                        <button class="vote-btn" id="btn-${logo.id}">
+                            ${selectedLogos.has(logo.id) ? '✓ Selected' : 'Select'}
+                        </button>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // Toggle logo selection
+        function toggleLogo(id) {
+            const card = document.getElementById(`card-${id}`);
+            const btn = document.getElementById(`btn-${id}`);
+
+            if (selectedLogos.has(id)) {
+                selectedLogos.delete(id);
+                card.classList.remove('selected');
+                btn.textContent = 'Select';
+                btn.classList.remove('voted');
+            } else {
+                selectedLogos.add(id);
+                card.classList.add('selected');
+                btn.textContent = '✓ Selected';
+                btn.classList.add('voted');
+            }
+
+            updateSubmitButton();
+        }
+
+        // Update submit button state
+        function updateSubmitButton() {
+            const btn = document.getElementById('submitVote');
+            const name = document.getElementById('voterName').value.trim();
+            btn.disabled = selectedLogos.size === 0 || name === '';
+        }
+
+        // Show toast notification
+        function showToast(message) {
+            const toast = document.getElementById('toast');
+            toast.textContent = message;
+            toast.classList.add('show');
+            setTimeout(() => toast.classList.remove('show'), 3000);
+        }
+
+        // Submit vote
+        function submitVote() {
+            const name = document.getElementById('voterName').value.trim();
+            const email = document.getElementById('voterEmail').value.trim();
+            const comments = document.getElementById('voterComments').value.trim();
+
+            if (!name) {
+                showToast('Please enter your name');
+                return;
+            }
+
+            if (selectedLogos.size === 0) {
+                showToast('Please select at least one logo');
+                return;
+            }
+
+            // Get selected logo names
+            const selectedNames = Array.from(selectedLogos).map(id => {
+                const logo = logos.find(l => l.id === id);
+                return logo ? logo.name : `Logo ${id}`;
+            });
+
+            // Create vote data
+            const voteData = {
+                name,
+                email,
+                selectedLogos: selectedNames,
+                comments,
+                timestamp: new Date().toISOString()
+            };
+
+            // Store in localStorage (for demo)
+            const votes = JSON.parse(localStorage.getItem('316global_votes') || '[]');
+            votes.push(voteData);
+            localStorage.setItem('316global_votes', JSON.stringify(votes));
+
+            // Also create mailto link for backup
+            const subject = encodeURIComponent('316 Global Logo Vote');
+            const body = encodeURIComponent(`
+Name: ${name}
+Email: ${email || 'Not provided'}
+Selected Logos: ${selectedNames.join(', ')}
+Comments: ${comments || 'None'}
+Timestamp: ${voteData.timestamp}
+            `);
+
+            // Send email
+            window.location.href = `mailto:mario38060@gmail.com?subject=${subject}&body=${body}`;
+
+            showToast('Thank you for your vote!');
+
+            // Reset form
+            setTimeout(() => {
+                selectedLogos.clear();
+                document.getElementById('voterName').value = '';
+                document.getElementById('voterEmail').value = '';
+                document.getElementById('voterComments').value = '';
+                renderLogos();
+            }, 1000);
+        }
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', () => {
+            renderLogos();
+
+            // Add input listener for name field
+            document.getElementById('voterName').addEventListener('input', updateSubmitButton);
+        });
+    </script>
+</body>
+</html>
