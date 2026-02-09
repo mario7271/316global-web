@@ -64,16 +64,6 @@
             align-items: center;
         }
 
-        .logo {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.5rem;
-            font-weight: 700;
-        }
-
-        .logo span {
-            color: var(--gold);
-        }
-
         nav a {
             color: white;
             text-decoration: none;
@@ -224,159 +214,12 @@
             margin-bottom: 1rem;
         }
 
-        /* Logo Vote Section */
-        .logo-vote {
-            padding: 5rem 2rem;
-            background: white;
-        }
-
-        .logo-vote-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            text-align: center;
-        }
-
-        .logo-vote h2 {
-            font-family: 'Playfair Display', serif;
-            font-size: 2.5rem;
-            color: var(--navy);
-            margin-bottom: 1rem;
-        }
-
-        .logo-vote > .logo-vote-content > p {
-            font-size: 1.1rem;
-            color: var(--dark-gray);
-            margin-bottom: 3rem;
-        }
-
-        .logo-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 1.5rem;
-            margin-top: 2rem;
-        }
-
-        .logo-card {
-            background: var(--off-white);
+        .card-image {
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
             border-radius: 12px;
-            overflow: hidden;
-            transition: transform 0.3s, box-shadow 0.3s;
-            cursor: pointer;
-            position: relative;
-        }
-
-        .logo-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-        }
-
-        .logo-card.selected {
-            border: 3px solid var(--gold);
-            box-shadow: 0 0 0 3px rgba(217, 119, 6, 0.2);
-        }
-
-        .logo-card img {
-            width: 100%;
-            height: 200px;
-            object-fit: contain;
-            background: white;
-            padding: 1rem;
-        }
-
-        .logo-card-footer {
-            padding: 1rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background: white;
-        }
-
-        .logo-number {
-            font-weight: 600;
-            color: var(--deep-blue);
-        }
-
-        .vote-btn {
-            background: var(--royal-blue);
-            color: white;
-            border: none;
-            padding: 0.5rem 1rem;
-            border-radius: 6px;
-            cursor: pointer;
-            font-size: 0.85rem;
-            font-weight: 500;
-            transition: background 0.3s;
-        }
-
-        .vote-btn:hover {
-            background: var(--deep-blue);
-        }
-
-        .vote-btn.voted {
-            background: var(--gold);
-        }
-
-        .vote-count {
-            font-size: 0.8rem;
-            color: var(--dark-gray);
-        }
-
-        /* Submit Vote Section */
-        .submit-section {
-            margin-top: 3rem;
-            padding: 2rem;
-            background: var(--off-white);
-            border-radius: 12px;
-            max-width: 500px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .submit-section h3 {
-            color: var(--deep-blue);
-            margin-bottom: 1rem;
-        }
-
-        .submit-section input {
-            width: 100%;
-            padding: 0.75rem 1rem;
-            border: 1px solid var(--light-gray);
-            border-radius: 8px;
-            font-size: 1rem;
-            margin-bottom: 1rem;
-        }
-
-        .submit-section textarea {
-            width: 100%;
-            padding: 0.75rem 1rem;
-            border: 1px solid var(--light-gray);
-            border-radius: 8px;
-            font-size: 1rem;
-            margin-bottom: 1rem;
-            min-height: 100px;
-            resize: vertical;
-        }
-
-        .submit-btn {
-            background: var(--gold);
-            color: white;
-            border: none;
-            padding: 1rem 2rem;
-            border-radius: 8px;
-            cursor: pointer;
-            font-size: 1rem;
-            font-weight: 600;
-            width: 100%;
-            transition: background 0.3s;
-        }
-
-        .submit-btn:hover {
-            background: var(--amber);
-        }
-
-        .submit-btn:disabled {
-            background: var(--light-gray);
-            cursor: not-allowed;
+            margin-bottom: 15px;
         }
 
         /* Footer */
@@ -398,25 +241,6 @@
             opacity: 0.9;
         }
 
-        /* Toast notification */
-        .toast {
-            position: fixed;
-            bottom: 2rem;
-            left: 50%;
-            transform: translateX(-50%) translateY(100px);
-            background: var(--deep-blue);
-            color: white;
-            padding: 1rem 2rem;
-            border-radius: 8px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.2);
-            transition: transform 0.3s ease;
-            z-index: 1001;
-        }
-
-        .toast.show {
-            transform: translateX(-50%) translateY(0);
-        }
-
         /* Responsive */
         @media (max-width: 768px) {
             .hero h1 {
@@ -435,9 +259,6 @@
                 grid-template-columns: 1fr;
             }
 
-            .logo-grid {
-                grid-template-columns: 1fr;
-            }
         }
     </style>
 </head>
@@ -445,10 +266,9 @@
     <!-- Header -->
     <header>
         <div class="header-content">
-            <div class="logo">316 <span>Global</span></div>
+            <img src="logo.png" alt="316 Global" style="height: 50px;">
             <nav>
                 <a href="#about" data-i18n data-en="About" data-es="Nosotros">About</a>
-                <a href="#vote" data-i18n data-en="Vote for Logo" data-es="Vota por el Logo">Vote for Logo</a>
                 <button type="button" class="lang-toggle" id="langToggle" title="Toggle language" aria-label="Toggle language">ES | EN</button>
             </nav>
         </div>
@@ -466,50 +286,29 @@
     <section class="about" id="about">
         <div class="about-content">
             <h2 data-i18n data-en="Our Mission" data-es="Nuestra Misión">Our Mission</h2>
-            <p data-i18n data-en="Inspired by John 3:16, we believe in the transformative power of love, education, and service. 316 Global is being formed to make a lasting impact through multiple programs." data-es="Inspirados en Juan 3:16, creemos en el poder transformador del amor, la educación y el servicio. 316 Global se está formando para hacer un impacto duradero a través de múltiples programas.">Inspired by John 3:16, we believe in the transformative power of love, education, and service. 316 Global is being formed to make a lasting impact through multiple programs.</p>
+            <p data-i18n data-en="Inspired by John 3:16, we believe in the transformative power of God's love, education, and service. 316 Global is being formed to make a lasting impact through multiple programs." data-es="Inspirados en Juan 3:16, creemos en el poder transformador del amor de Dios, la educación y el servicio. 316 Global se está formando para hacer un impacto duradero a través de múltiples programas.">Inspired by John 3:16, we believe in the transformative power of God's love, education, and service. 316 Global is being formed to make a lasting impact through multiple programs.</p>
 
             <div class="programs">
                 <div class="program-card">
-                    <div class="program-icon">📱</div>
+                    <img src="images/discipleship.png" alt="Digital Discipleship" class="card-image">
                     <h3 data-i18n data-en="Digital Discipleship" data-es="Discipulado Digital">Digital Discipleship</h3>
                     <p data-i18n data-en="Technology platforms for spiritual growth and biblical education" data-es="Plataformas tecnológicas para el crecimiento espiritual y la educación bíblica">Technology platforms for spiritual growth and biblical education</p>
                 </div>
                 <div class="program-card">
-                    <div class="program-icon">✈️</div>
+                    <img src="images/missions.png" alt="Mission Trips" class="card-image">
                     <h3 data-i18n data-en="Mission Trips" data-es="Viajes Misioneros">Mission Trips</h3>
                     <p data-i18n data-en="Short-term missions to underserved communities worldwide" data-es="Misiones a corto plazo a comunidades desatendidas en todo el mundo">Short-term missions to underserved communities worldwide</p>
                 </div>
                 <div class="program-card">
-                    <div class="program-icon">🏥</div>
+                    <img src="images/humanitarian.png" alt="Humanitarian Aid" class="card-image">
                     <h3 data-i18n data-en="Humanitarian Aid" data-es="Ayuda Humanitaria">Humanitarian Aid</h3>
                     <p data-i18n data-en="Medical assistance, construction, and community support" data-es="Asistencia médica, construcción y apoyo comunitario">Medical assistance, construction, and community support</p>
                 </div>
                 <div class="program-card">
-                    <div class="program-icon">🎓</div>
+                    <img src="images/scholarship.png" alt="Scholarships" class="card-image">
                     <h3 data-i18n data-en="Scholarships" data-es="Becas">Scholarships</h3>
                     <p data-i18n data-en="Educational support for students in developing countries" data-es="Apoyo educativo para estudiantes en países en desarrollo">Educational support for students in developing countries</p>
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Logo Vote Section -->
-    <section class="logo-vote" id="vote">
-        <div class="logo-vote-content">
-            <h2 data-i18n data-en="Help Us Choose Our Logo" data-es="Ayúdanos a Elegir Nuestro Logo">Help Us Choose Our Logo</h2>
-            <p data-i18n data-en="We're finalizing our brand identity and would love your input! Click on your favorite logo design(s) to vote." data-es="¡Estamos finalizando nuestra identidad de marca y nos encantaría tu opinión! Haz clic en tu(s) diseño(s) de logo favorito(s) para votar.">We're finalizing our brand identity and would love your input! Click on your favorite logo design(s) to vote.</p>
-
-            <div class="logo-grid" id="logoGrid">
-                <!-- Logos will be inserted here by JavaScript -->
-            </div>
-
-            <div class="submit-section">
-                <h3 data-i18n data-en="Submit Your Vote" data-es="Envía tu Voto">Submit Your Vote</h3>
-                <p class="submit-instruction" style="font-size: 0.9rem; color: var(--dark-gray); margin-bottom: 1rem;" data-i18n data-en="Select your favorite logo(s) above, then submit your vote." data-es="Selecciona tu(s) logo(s) favorito(s) arriba, luego envía tu voto.">Select your favorite logo(s) above, then submit your vote.</p>
-                <input type="text" id="voterName" data-placeholder-en="Your Name" data-placeholder-es="Tu Nombre" placeholder="Your Name" required>
-                <input type="email" id="voterEmail" data-placeholder-en="Your Email (optional)" data-placeholder-es="Tu Correo (opcional)" placeholder="Your Email (optional)">
-                <textarea id="voterComments" data-placeholder-en="Any comments or suggestions? (optional)" data-placeholder-es="¿Algún comentario o sugerencia? (opcional)" placeholder="Any comments or suggestions? (optional)"></textarea>
-                <button class="submit-btn" id="submitVote" onclick="submitVote()" data-i18n data-en="Submit Vote" data-es="Enviar Voto">Submit Vote</button>
             </div>
         </div>
     </section>
@@ -521,27 +320,15 @@
         <p style="margin-top: 1rem; font-size: 0.8rem;">© 2026 316 Global. All rights reserved.</p>
     </footer>
 
-    <!-- Toast -->
-    <div class="toast" id="toast"></div>
-
     <script>
         // i18n - Default: English
         const LANG_KEY = '316global_lang';
         let currentLang = localStorage.getItem(LANG_KEY) || 'en';
 
-        const translations = {
-            select: { en: 'Select', es: 'Seleccionar' },
-            selected: { en: '✓ Selected', es: '✓ Seleccionado' },
-            pleaseName: { en: 'Please enter your name', es: 'Por favor ingresa tu nombre' },
-            pleaseLogo: { en: 'Please select at least one logo', es: 'Por favor selecciona al menos un logo' },
-            thankVote: { en: 'Thank you for your vote!', es: '¡Gracias por tu voto!' }
-        };
-
         function setLanguage(lang) {
             currentLang = lang;
             localStorage.setItem(LANG_KEY, lang);
             applyTranslations();
-            renderLogos(); // Re-render to update button text
         }
 
         function applyTranslations() {
@@ -556,152 +343,15 @@
             document.documentElement.lang = currentLang === 'es' ? 'es' : 'en';
         }
 
-        // Logo data
-        const logos = [
-            { id: 1, file: '316Global.jpeg', name: 'Logo 1' },
-            { id: 2, file: '316Global_1.jpeg', name: 'Logo 2' },
-            { id: 3, file: '316Global_2.jpeg', name: 'Logo 3' },
-            { id: 4, file: '316Global_3.jpeg', name: 'Logo 4' },
-            { id: 5, file: '316Global_4.jpeg', name: 'Logo 5' },
-            { id: 6, file: '316Global_5.jpeg', name: 'Logo 6' },
-            { id: 7, file: '316Global_6.jpeg', name: 'Logo 7' },
-            { id: 8, file: '316Global_7.jpeg', name: 'Logo 8' },
-            { id: 9, file: '316Global_8.jpeg', name: 'Logo 9' },
-            { id: 10, file: '316Global_9.jpeg', name: 'Logo 10' },
-            { id: 11, file: '316Global_10.jpeg', name: 'Logo 11' },
-            { id: 12, file: '316Global_11.jpeg', name: 'Logo 12' },
-            { id: 13, file: '316Global_12.jpeg', name: 'Logo 13' },
-            { id: 14, file: '316Global_13.jpeg', name: 'Logo 14' },
-            { id: 15, file: '316Global_14.jpeg', name: 'Logo 15' },
-        ];
-
-        let selectedLogos = new Set();
-
-        // Render logos
-        function renderLogos() {
-            const grid = document.getElementById('logoGrid');
-            grid.innerHTML = logos.map(logo => `
-                <div class="logo-card" id="card-${logo.id}" onclick="toggleLogo(${logo.id})">
-                    <img src="logos/${logo.file}" alt="${logo.name}" loading="lazy">
-                    <div class="logo-card-footer">
-                        <span class="logo-number">${logo.name}</span>
-                        <button class="vote-btn" id="btn-${logo.id}">
-                            ${selectedLogos.has(logo.id) ? translations.selected[currentLang] : translations.select[currentLang]}
-                        </button>
-                    </div>
-                </div>
-            `).join('');
-        }
-
-        // Toggle logo selection
-        function toggleLogo(id) {
-            const card = document.getElementById(`card-${id}`);
-            const btn = document.getElementById(`btn-${id}`);
-
-            if (selectedLogos.has(id)) {
-                selectedLogos.delete(id);
-                card.classList.remove('selected');
-                btn.textContent = translations.select[currentLang];
-                btn.classList.remove('voted');
-            } else {
-                selectedLogos.add(id);
-                card.classList.add('selected');
-                btn.textContent = translations.selected[currentLang];
-                btn.classList.add('voted');
-            }
-
-            updateSubmitButton();
-        }
-
-        // Update submit button state
-        function updateSubmitButton() {
-            const btn = document.getElementById('submitVote');
-            const name = document.getElementById('voterName').value.trim();
-            btn.disabled = selectedLogos.size === 0 || name === '';
-        }
-
-        // Show toast notification
-        function showToast(message) {
-            const toast = document.getElementById('toast');
-            toast.textContent = message;
-            toast.classList.add('show');
-            setTimeout(() => toast.classList.remove('show'), 3000);
-        }
-
-        // Submit vote
-        function submitVote() {
-            const name = document.getElementById('voterName').value.trim();
-            const email = document.getElementById('voterEmail').value.trim();
-            const comments = document.getElementById('voterComments').value.trim();
-
-            if (!name) {
-                showToast(translations.pleaseName[currentLang]);
-                return;
-            }
-
-            if (selectedLogos.size === 0) {
-                showToast(translations.pleaseLogo[currentLang]);
-                return;
-            }
-
-            // Get selected logo names
-            const selectedNames = Array.from(selectedLogos).map(id => {
-                const logo = logos.find(l => l.id === id);
-                return logo ? logo.name : `Logo ${id}`;
-            });
-
-            // Create vote data
-            const voteData = {
-                name,
-                email,
-                selectedLogos: selectedNames,
-                comments,
-                timestamp: new Date().toISOString()
-            };
-
-            // Store in localStorage (for demo)
-            const votes = JSON.parse(localStorage.getItem('316global_votes') || '[]');
-            votes.push(voteData);
-            localStorage.setItem('316global_votes', JSON.stringify(votes));
-
-            // Also create mailto link for backup
-            const subject = encodeURIComponent('316 Global Logo Vote');
-            const body = encodeURIComponent(`
-Name: ${name}
-Email: ${email || 'Not provided'}
-Selected Logos: ${selectedNames.join(', ')}
-Comments: ${comments || 'None'}
-Timestamp: ${voteData.timestamp}
-            `);
-
-            // Send email
-            window.location.href = `mailto:malmer@juan316.com?subject=${subject}&body=${body}`;
-
-            showToast(translations.thankVote[currentLang]);
-
-            // Reset form
-            setTimeout(() => {
-                selectedLogos.clear();
-                document.getElementById('voterName').value = '';
-                document.getElementById('voterEmail').value = '';
-                document.getElementById('voterComments').value = '';
-                renderLogos();
-            }, 1000);
-        }
-
         // Initialize
         document.addEventListener('DOMContentLoaded', () => {
             applyTranslations();
-            renderLogos();
 
             // Language toggle
             document.getElementById('langToggle').addEventListener('click', () => {
                 currentLang = currentLang === 'en' ? 'es' : 'en';
                 setLanguage(currentLang);
             });
-
-            // Add input listener for name field
-            document.getElementById('voterName').addEventListener('input', updateSubmitButton);
         });
     </script>
 </body>
