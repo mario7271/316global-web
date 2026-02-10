@@ -126,7 +126,7 @@
             font-size: 1.25rem;
             color: var(--royal-blue);
             margin-bottom: 2rem;
-            font-weight: 300;
+            font-weight: 700;
             letter-spacing: 0.2em;
             text-align: center;
         }
@@ -286,7 +286,7 @@
     <section class="about" id="about">
         <div class="about-content">
             <h2 data-i18n data-en="Our Mission" data-es="Nuestra Misión">Our Mission</h2>
-            <p data-i18n data-en="Inspired by John 3:16, we believe in the transformative power of God's love, education, and service. 316 Global is being formed to make a lasting impact through multiple programs." data-es="Inspirados en Juan 3:16, creemos en el poder transformador del amor de Dios, la educación y el servicio. 316 Global se está formando para hacer un impacto duradero a través de múltiples programas.">Inspired by John 3:16, we believe in the transformative power of God's love, education, and service. 316 Global is being formed to make a lasting impact through multiple programs.</p>
+            <p data-i18n data-i18n-html data-en="Inspired by <em><strong>John 3:16</strong></em>, we believe in the transformative power of God's love, education, and service. <strong>316 Global</strong> is being formed to make a lasting impact through multiple programs." data-es="Inspirados en <em><strong>Juan 3:16</strong></em>, creemos en el poder transformador del amor de Dios, la educación y el servicio. <strong>316 Global</strong> se está formando para hacer un impacto duradero a través de múltiples programas.">Inspired by <em><strong>John 3:16</strong></em>, we believe in the transformative power of God's love, education, and service. <strong>316 Global</strong> is being formed to make a lasting impact through multiple programs.</p>
 
             <div class="programs">
                 <div class="program-card">
@@ -315,7 +315,7 @@
 
     <!-- Footer -->
     <footer>
-        <p class="verse" data-i18n data-en='"For God so loved the world that he gave his one and only Son, that whoever believes in him shall not perish but have eternal life." — John 3:16' data-es='"Porque de tal manera amó Dios al mundo, que ha dado a su Hijo unigénito, para que todo aquel que en él cree no se pierda, mas tenga vida eterna." — Juan 3:16'>"For God so loved the world that he gave his one and only Son, that whoever believes in him shall not perish but have eternal life." — John 3:16</p>
+        <p class="verse" data-i18n data-en="&quot;For God so loved the world that he gave his one and only Son, that whoever believes in him shall not perish but have eternal life.&quot; — John 3:16" data-es="&quot;Porque de tal manera amó Dios al mundo, que ha dado a su Hijo unigénito, para que todo aquel que en él cree no se pierda, mas tenga vida eterna.&quot; — Juan 3:16">"For God so loved the world that he gave his one and only Son, that whoever believes in him shall not perish but have eternal life." — John 3:16</p>
         <p data-i18n data-en="316 Global • Nonprofit Organization • Tennessee" data-es="316 Global • Organización sin fines de lucro • Tennessee">316 Global • Nonprofit Organization • Tennessee</p>
         <p style="margin-top: 1rem; font-size: 0.8rem;" data-i18n data-en="© 2026 316 Global. All rights reserved." data-es="© 2026 316 Global. Todos los derechos reservados.">© 2026 316 Global. All rights reserved.</p>
     </footer>
@@ -334,7 +334,7 @@
         function applyTranslations() {
             document.querySelectorAll('[data-i18n]').forEach(el => {
                 const text = el.getAttribute(`data-${currentLang}`) || el.getAttribute('data-en');
-                if (text) el.textContent = text;
+                if (text) el[el.hasAttribute('data-i18n-html') ? 'innerHTML' : 'textContent'] = text;
             });
             document.querySelectorAll('[data-placeholder-en]').forEach(el => {
                 const ph = el.getAttribute(`data-placeholder-${currentLang}`) || el.getAttribute('data-placeholder-en');
